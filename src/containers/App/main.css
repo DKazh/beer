@@ -1,0 +1,19 @@
+.App{
+	width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.App-header {
+  background-color: #00d1b1;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2em;
+}

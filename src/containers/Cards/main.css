@@ -1,0 +1,22 @@
+.cards{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+	position: relative;
+}
+.load-more{
+	position: absolute;
+	bottom: -50px;
+	right: 0;
+	background-color: #3172db;
+	width: 200px;
+	height: 42px;
+	line-height: 40px;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+}
+.load-more:hover{
+	background-color: #fb5c3d;
+}
