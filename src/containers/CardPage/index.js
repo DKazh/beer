@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './main.css'
+import SideBar from '../SideBar';
 import {connect} from 'react-redux'
 import {fetchCardById} from '../../actions'
 import {withRouter} from 'react-router-dom'
@@ -12,18 +13,22 @@ class CardPage extends Component {
 
   render() {
     const card = this.props.card
+    const style = {
+      'background-image': `url(${card.image_url})`
+    }
     return (
       <div className="card-page__wrapper">
-        <div className="card-page__img"><img src={card.image_url} alt={card.name}/></div>
+        <div className="card-page__img" style={style}></div>
         <div className="card-page__content">
           <h2 className="card-page__title">{card.name}</h2>
-          <div className="card-page__text">{card.description}</div>
           <ul className="card-page__params">
-            <li className="card-page__param">{card.abv}</li>
-            <li className="card-page__param">{card.food_pairing}</li>
-            <li className="card-page__param">{card.ingridients}</li>
+            <li className="card-page__param"><span className="card-page__text-title">ABV: </span>{card.abv}</li>
+            <li className="card-page__param"><span className="card-page__text-title">FOOD PAIRING: </span>{card.food_pairing}</li>
+            <li className="card-page__param"><span className="card-page__text-title">INGRIDIENTS: </span>{card.ingridients}</li>
           </ul>
-        </div>        
+          <div className="card-page__text">{card.description}</div>
+        </div>
+        <SideBar/>
       </div>
     );
   }

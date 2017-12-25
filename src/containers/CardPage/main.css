@@ -8,20 +8,33 @@ li{
 .card-page__wrapper{
 	display: flex;
 	flex-wrap: wrap;
+	width: 100%;
+	margin: 60px 20px;
 }
 .card-page__img{
-	flex-basis: 30%;
-	max-height: 60vh;
+	flex-basis: 35%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 	display: flex;
 	justify-content: center;
 }
  .card-page__content{
- 	flex-basis: 70%;
+ 	flex-basis: 40%;
  	max-height: 80vh;
  }
  .card-page__title{
-	margin: 40px 0;
+	margin: 2px 0;
+	color: #3172db;
  }
  .card-page__param{
  	line-height: 30px;
  }
+ .card-page__text-title{
+ 	font-weight: bold;
+ 	color: #ccc;
+ }
+.card-page__text{
+	margin-top: 40px;
+}

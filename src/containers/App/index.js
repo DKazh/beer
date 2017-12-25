@@ -12,10 +12,12 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Search/>
+        <div className="content__wrapper">
         <Switch>
         	<Route path='/' exact component={Cards} />
         	<Route path={'/cards/:id'} component={CardPage} />
         </Switch>
+        </div>
       </div>
     );
   }
