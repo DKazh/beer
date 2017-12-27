@@ -14,7 +14,7 @@ class CardPage extends Component {
   render() {
     const card = this.props.card
     const style = {
-      'background-image': `url(${card.image_url})`
+      backgroundImage: `url(${card.image_url})`
     }
     return (
       <div className="card-page__wrapper">

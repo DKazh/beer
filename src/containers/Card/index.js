@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as R from 'ramda'
 import './main.css'
 import {Link} from 'react-router-dom'
+import {addCartToFavor} from '../../actions'
 
 class Card extends Component {
 
@@ -9,7 +10,7 @@ class Card extends Component {
     const card = this.props.cardData
     const preview = `${R.take(100, card.description)}...`
     const style = {
-      'background-image': `url(${card.image_url})`
+      backgroundImage: `url(${card.image_url})`
     }
     return (
       <div className="card">
@@ -18,7 +19,7 @@ class Card extends Component {
       	<h2 className="card__title">{card.name}</h2>
       	<div className="card__text">{preview}</div>
         <Link to={`/cards/${card.id}`}><button className="card__button button__margin">ПОДРОБНЕЕ</button></Link>
-        <Link to={`/cards/${card.id}`}><button className="card__button button__margin">В ИЗБРАННОЕ</button></Link>
+        <button className="card__button button__margin" onClick={() => addCartToFavor(card.id)}>В ИЗБРАННОЕ</button>
       </div>
       </div>
     );

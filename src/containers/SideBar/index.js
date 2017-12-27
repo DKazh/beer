@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './main.css';
+import {addCartToFavor} from '../../actions';
 
 class SideBar extends Component {
   render() {
@@ -17,10 +18,10 @@ class SideBar extends Component {
     		<div className="sidebar__count center">Количество бутылок</div>
     		<div className="sidebar__abv center">Суммарная крепость</div>
     	</div>
-      <Link to={`/cards/${card.id}`}><button className="card__button button__margin margin-top-20">
+      <button className="card__button button__margin margin-top-20" onClick={() => addCartToFavor(card.id)}>
       	<i class="fa fa-star margin-right-10" aria-hidden="true"></i>
       	В избранное
-      </button></Link>
+      </button>
       <Link to={`/cards/${card.id}`}><button className="card__button button__margin margin-top-20">
       	<i class="fa fa-home margin-right-10" aria-hidden="true"></i>
       	Вернуться в каталог

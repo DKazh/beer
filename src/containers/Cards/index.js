@@ -14,7 +14,7 @@ class Cards extends Component {
     return (
       <div className="cards">
         {cards.map((card, index) => <Card cardData={card} key={card.id}/>)}
-        <a href="#" onClick={loadMore} className="load-more">Показать еще</a>
+        <button onClick={loadMore} className="load-more">Показать еще</button>
       </div>
     );
   }

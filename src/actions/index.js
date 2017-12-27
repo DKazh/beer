@@ -9,7 +9,8 @@ import {
   FETCH_MORE_FAILURE,
   GET_CARD_BY_ID_START,
   GET_CARD_BY_ID_SUCCESS,
-  GET_CARD_BY_ID_FAILURE
+  GET_CARD_BY_ID_FAILURE,
+  ADD_CART_TO_FAVOR
 } from '../actionTypes'
 
 
@@ -73,4 +74,11 @@ export const loadMore = () => async (dispatch, getState)=> {
 	    error: true
 	  })
 	}
+}
+export const addCartToFavor = (id) => dispatch => {
+	console.error('test-actions')
+  dispatch({
+    type: ADD_CART_TO_FAVOR,
+    payload: id
+  })
 }
