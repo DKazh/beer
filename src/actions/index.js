@@ -76,7 +76,6 @@ export const loadMore = () => async (dispatch, getState)=> {
 	}
 }
 export const addCartToFavor = (id) => dispatch => {
-	console.error('test-actions')
   dispatch({
     type: ADD_CART_TO_FAVOR,
     payload: id

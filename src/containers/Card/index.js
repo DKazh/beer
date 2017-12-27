@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import * as R from 'ramda'
 import './main.css'
 import {Link} from 'react-router-dom'
-import {addCartToFavor} from '../../actions'
 
 class Card extends Component {
 
   render() {
     const card = this.props.cardData
+    const addCartToFavor = this.props.favor
     const preview = `${R.take(100, card.description)}...`
     const style = {
       backgroundImage: `url(${card.image_url})`
