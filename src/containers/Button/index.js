@@ -4,7 +4,9 @@ import './main.css';
 class Button extends Component {
   render() {
     return (
-      <div className="header-button">{this.props.name}</div>
+      <button className="card__button button__margin" onClick={() => this.props.action(this.props.id)}>
+      	<i class={`fa fa-star margin-right-5`} aria-hidden="true"></i>добавить
+		</button>
     );
   }
 }

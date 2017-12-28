@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './main.css';
 import Header from '../Header';
 import Search from '../Search';
+import SideBar from '../SideBar';
 import Cards from '../Cards';
 import CardPage from '../CardPage';
 import {Route, Switch} from 'react-router-dom';
@@ -17,7 +18,8 @@ class App extends Component {
         	<Route path='/' exact component={Cards} />
         	<Route path={'/cards/:id'} component={CardPage} />
         </Switch>
-        </div>
+        <SideBar/>
+        </div> 
       </div>
     );
   }

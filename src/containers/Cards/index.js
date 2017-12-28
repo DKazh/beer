@@ -15,9 +15,10 @@ class Cards extends Component {
     return (
       <div className="cards">
         {cards.map((card, index) => 
-          <Card cardData={card} favor={addCartToFavor} key={card.id}/>)}
+          <Card cardData={card} addCartToFavor={addCartToFavor} key={card.id}/>)}
         <button onClick={loadMore} className="load-more">Показать еще</button>
       </div>
+
     );
   }
 }

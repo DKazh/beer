@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './main.css';
 import {addCartToFavor} from '../../actions';
+import {connect} from 'react-redux';
+import {getBeerName,getCountOfBottles, getTotalABV} from '../../selectors';
+import {withRouter} from 'react-router-dom'
 
 class SideBar extends Component {
   render() {
@@ -11,24 +14,25 @@ class SideBar extends Component {
     	<div className="sidebar__wrapper">
     		<h3 className="sidebar__title center">ИЗБРАННОЕ:</h3>
     		<ul className="sidebar__ul">
-				<li className="sidebar__li center">Пиво 1</li>
-				<li className="sidebar__li center">Пиво 1</li>
-				<li className="sidebar__li center">Пиво 1</li>
+    		{this.props.beerName.map((beer, index) =>
+				<li className="sidebar__li center" key={beer.id}>{beer.name}</li>
+			)}	
     		</ul>
-    		<div className="sidebar__count center">Количество бутылок</div>
-    		<div className="sidebar__abv center">Суммарная крепость</div>
+    		<div className="sidebar__count center">Количество бутылок: {this.props.count}</div>
+    		<div className="sidebar__abv center">Суммарная крепость: {this.props.totalAlc} ABV</div>
     	</div>
-      <button className="card__button button__margin margin-top-20" onClick={() => addCartToFavor(card.id)}>
-      	<i class="fa fa-star margin-right-10" aria-hidden="true"></i>
-      	В избранное
-      </button>
-      <Link to={`/cards/${card.id}`}><button className="card__button button__margin margin-top-20">
-      	<i class="fa fa-home margin-right-10" aria-hidden="true"></i>
-      	Вернуться в каталог
-      </button></Link>
     </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+  	beerName: getBeerName(state),
+    count: getCountOfBottles(state),
+    totalAlc: getTotalABV(state)
+  }
+}
 
-export default SideBar;
+export default withRouter(
+  connect(mapStateToProps, null)(SideBar)
+)

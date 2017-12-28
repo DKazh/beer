@@ -8,7 +8,7 @@ li{
 .card-page__wrapper{
 	display: flex;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 70%;
 	margin: 60px 20px;
 }
 .card-page__img{

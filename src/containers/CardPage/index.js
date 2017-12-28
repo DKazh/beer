@@ -4,6 +4,9 @@ import SideBar from '../SideBar';
 import {connect} from 'react-redux'
 import {fetchCardById} from '../../actions'
 import {withRouter} from 'react-router-dom'
+import Button from '../Button'
+import {addCartToFavor} from '../../actions'
+import {Link} from 'react-router-dom'
 
 
 class CardPage extends Component {
@@ -16,6 +19,8 @@ class CardPage extends Component {
     const style = {
       backgroundImage: `url(${card.image_url})`
     }
+    const addCartToFavor = this.props.addCartToFavor
+
     return (
       <div className="card-page__wrapper">
         <div className="card-page__img" style={style}></div>
@@ -27,15 +32,19 @@ class CardPage extends Component {
             <li className="card-page__param"><span className="card-page__text-title">INGRIDIENTS: </span>{card.ingridients}</li>
           </ul>
           <div className="card-page__text">{card.description}</div>
+          <Link className="card__button button__margin" to={`/`}>
+              <i class={`fa fa-home margin-right-5`} aria-hidden="true"></i>вернуться в каталог
+          </Link>
+           <Button action={addCartToFavor} id={card.id}/>
         </div>
-        <SideBar/>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = {
-  fetchCardById
+  fetchCardById,
+  addCartToFavor
 }
 
 const mapStateToProps = state => {

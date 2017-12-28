@@ -24,20 +24,3 @@
 	justify-content: space-around;
 	height: 100%;
 }
-.card__button{
-	padding: 10px 20px ;
-	border-radius: 5px;
-	background-color: #00d1b1;
-	border: 0;
-	text-decoration: none;
-	font-weight: bold;
-	color: #fff;
-	width: 100%;
-	cursor: pointer;
-}
-.card__button:hover{
-	background-color: 	#fb5c3d;
-}
-.button__margin{
-	margin: 5px 0;
-}
